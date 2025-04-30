@@ -8,6 +8,9 @@ The WAQI project aggregates real-time air quality data from national EPAs, inclu
 
 ![alt text](jlm.png)
 
+
+![alt text](2.png)
+
 | Station Name                 | Description / Notes                                         | Station ID |
 |-----------------------------|-------------------------------------------------------------|------------|
 | Central Bus Station         | Fixed monitor, non-portable; operated by Misrad HaSvivah    | H8655      |
