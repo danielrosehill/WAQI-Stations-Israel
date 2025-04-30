@@ -4,19 +4,25 @@ This repository documents manually collected WAQI (World Air Quality Index) stat
 
 The WAQI project aggregates real-time air quality data from national EPAs, including Israel's **Ministry of Environmental Protection (Misrad HaSvivah)**. This list is based on manual geolocation and observation of WAQI's map interface.
 
-## Jerusalem Stations
+## Jerusalem Stations - Urban
 
 ![alt text](jlm.png)
 
 
 ![alt text](2.png)
 
+---
+
 | Station Name                 | Description / Notes                                         | Station ID |
 |-----------------------------|-------------------------------------------------------------|------------|
 | Central Bus Station         | Fixed monitor, non-portable; operated by Misrad HaSvivah    | H8655      |
-| Shmuel Hanavi / Bar Ilan Univ. | Near Bar Ilan intersection                                | H2966      |
-| Central Urban Sensor        | Labelled "Jerusalem"; geographically central                | H5784      |
+| Sanhedriya| Near Bar Ilan intersection                                | H2966      |
+| Talbiye       | Labelled "Jerusalem"; geographically central                | H5784      |
 | Baka                        | Possibly mislabeled; appears in southern Jerusalem          | H2985      |
+
+
+## Jerusalem Periphery
+
 | Kfar Etzion                 | Near Gush Etzion; influenced by local conditions            | H2986      |
 
 ## Other Israel Stations
