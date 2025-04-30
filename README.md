@@ -1,15 +1,16 @@
 # WAQI Station IDs - Israel (Manual Survey)
 
+![alt text](images/image.png)
+
 This repository documents manually collected WAQI (World Air Quality Index) station IDs for several key locations in Israel. This data is useful for setting up automated queries to WAQI's air quality API.
 
 The WAQI project aggregates real-time air quality data from national EPAs, including Israel's **Ministry of Environmental Protection (Misrad HaSvivah)**. This list is based on manual geolocation and observation of WAQI's map interface.
 
 ## Jerusalem Stations - Urban
+ 
+ ![alt text](images/jlm.png)
 
-![alt text](jlm.png)
-
-
-![alt text](2.png)
+ ![alt text](images/2.png)
 
 ---
 
