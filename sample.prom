@@ -1,0 +1,196 @@
+# Multi-station WAQI export - 2025-04-30T17:41:15.150606Z
+
+# WAQI scrape for Talbiye (H5784) — Dominant pollutant: pm10
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Talbiye",id="H5784"} 65
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Talbiye",id="H5784"} 50
+# HELP waqi_pm10 PM10 µg/m³
+# TYPE waqi_pm10 gauge
+waqi_pm10{station="Talbiye",id="H5784"} 65
+# HELP waqi_co Carbon Monoxide (CO) ppm
+# TYPE waqi_co gauge
+waqi_co{station="Talbiye",id="H5784"} 3.3
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Talbiye",id="H5784"} 7.2
+# HELP waqi_o3 Ozone (O3) ppb
+# TYPE waqi_o3 gauge
+waqi_o3{station="Talbiye",id="H5784"} 36.6
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Talbiye",id="H5784"} -17.7
+# HELP waqi_humidity Humidity %
+# TYPE waqi_humidity gauge
+waqi_humidity{station="Talbiye",id="H5784"} 73
+# HELP waqi_pressure Pressure hPa
+# TYPE waqi_pressure gauge
+waqi_pressure{station="Talbiye",id="H5784"} 1011.4
+# HELP waqi_wind Wind m/s
+# TYPE waqi_wind gauge
+waqi_wind{station="Talbiye",id="H5784"} 0.6
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Talbiye",id="H5784"} 31.768319
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Talbiye",id="H5784"} 35.21371
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Talbiye",id="H5784"} 1746039600
+
+# WAQI scrape for Central Bus Station (H8655) — Dominant pollutant: pm10
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Central Bus Station",id="H8655"} 60
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Central Bus Station",id="H8655"} 40
+# HELP waqi_pm10 PM10 µg/m³
+# TYPE waqi_pm10 gauge
+waqi_pm10{station="Central Bus Station",id="H8655"} 60
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Central Bus Station",id="H8655"} 9
+# HELP waqi_o3 Ozone (O3) ppb
+# TYPE waqi_o3 gauge
+waqi_o3{station="Central Bus Station",id="H8655"} 36.6
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Central Bus Station",id="H8655"} -17.7
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Central Bus Station",id="H8655"} 31.789032
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Central Bus Station",id="H8655"} 35.202641
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Central Bus Station",id="H8655"} 1746039600
+
+# WAQI scrape for Sanhedriya (H2966) — Dominant pollutant: pm25
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Sanhedriya",id="H2966"} 58
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Sanhedriya",id="H2966"} 58
+# HELP waqi_co Carbon Monoxide (CO) ppm
+# TYPE waqi_co gauge
+waqi_co{station="Sanhedriya",id="H2966"} 3.3
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Sanhedriya",id="H2966"} 9.9
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Sanhedriya",id="H2966"} -17.7
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Sanhedriya",id="H2966"} 31.79445
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Sanhedriya",id="H2966"} 35.21997
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Sanhedriya",id="H2966"} 1746039600
+
+# WAQI scrape for Baka (H2985) — Dominant pollutant: pm10
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Baka",id="H2985"} 65
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Baka",id="H2985"} 50
+# HELP waqi_pm10 PM10 µg/m³
+# TYPE waqi_pm10 gauge
+waqi_pm10{station="Baka",id="H2985"} 65
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Baka",id="H2985"} 7.2
+# HELP waqi_o3 Ozone (O3) ppb
+# TYPE waqi_o3 gauge
+waqi_o3{station="Baka",id="H2985"} 36.6
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Baka",id="H2985"} -17.7
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Baka",id="H2985"} 31.75709
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Baka",id="H2985"} 35.21741
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Baka",id="H2985"} 1746039600
+
+# WAQI scrape for Kfar Etzion (H2986) — Dominant pollutant: pm25
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Kfar Etzion",id="H2986"} 124
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Kfar Etzion",id="H2986"} 124
+# HELP waqi_pm10 PM10 µg/m³
+# TYPE waqi_pm10 gauge
+waqi_pm10{station="Kfar Etzion",id="H2986"} 76
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Kfar Etzion",id="H2986"} 3.4
+# HELP waqi_o3 Ozone (O3) ppb
+# TYPE waqi_o3 gauge
+waqi_o3{station="Kfar Etzion",id="H2986"} 43.2
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Kfar Etzion",id="H2986"} -17.7
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Kfar Etzion",id="H2986"} 31.65647
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Kfar Etzion",id="H2986"} 35.11681
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Kfar Etzion",id="H2986"} 1746039600
+
+# WAQI scrape for Tel Aviv (H5783) — Dominant pollutant: pm25
+# HELP waqi_aqi Air Quality Index
+# TYPE waqi_aqi gauge
+waqi_aqi{station="Tel Aviv",id="H5783"} 75
+# HELP waqi_pm25 PM2.5 µg/m³
+# TYPE waqi_pm25 gauge
+waqi_pm25{station="Tel Aviv",id="H5783"} 75
+# HELP waqi_pm10 PM10 µg/m³
+# TYPE waqi_pm10 gauge
+waqi_pm10{station="Tel Aviv",id="H5783"} 68
+# HELP waqi_co Carbon Monoxide (CO) ppm
+# TYPE waqi_co gauge
+waqi_co{station="Tel Aviv",id="H5783"} 3.7
+# HELP waqi_no2 Nitrogen Dioxide (NO2) ppb
+# TYPE waqi_no2 gauge
+waqi_no2{station="Tel Aviv",id="H5783"} 3.8
+# HELP waqi_o3 Ozone (O3) ppb
+# TYPE waqi_o3 gauge
+waqi_o3{station="Tel Aviv",id="H5783"} 39.5
+# HELP waqi_temp_c Temperature °C
+# TYPE waqi_temp_c gauge
+waqi_temp_c{station="Tel Aviv",id="H5783"} 25
+# HELP waqi_humidity Humidity %
+# TYPE waqi_humidity gauge
+waqi_humidity{station="Tel Aviv",id="H5783"} 50
+# HELP waqi_pressure Pressure hPa
+# TYPE waqi_pressure gauge
+waqi_pressure{station="Tel Aviv",id="H5783"} 1007.5
+# HELP waqi_wind Wind m/s
+# TYPE waqi_wind gauge
+waqi_wind{station="Tel Aviv",id="H5783"} 5.9
+# HELP waqi_geo_lat Sensor latitude
+# TYPE waqi_geo_lat gauge
+waqi_geo_lat{station="Tel Aviv",id="H5783"} 32.066158
+# HELP waqi_geo_lon Sensor longitude
+# TYPE waqi_geo_lon gauge
+waqi_geo_lon{station="Tel Aviv",id="H5783"} 34.777819
+# HELP waqi_last_updated Last reading timestamp (Unix)
+# TYPE waqi_last_updated gauge
+waqi_last_updated{station="Tel Aviv",id="H5783"} 1746039600
