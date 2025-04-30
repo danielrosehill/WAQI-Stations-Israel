@@ -7,7 +7,7 @@ OUTFILE = "/var/lib/node_exporter/textfile_collector/waqi.prom"
 TOKEN = "7242424242424242424242424242"
 
 STATIONS = {
-    "Talbiye": "5784",
+    "Talbiye": "H5784",
     "Central Bus Station": "H8655",
     "Sanhedriya": "H2966",
     "Baka": "H2985",
