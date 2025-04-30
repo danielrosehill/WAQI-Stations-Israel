@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 import requests
 import sys
+import re
+import time
 from datetime import datetime
 
 OUTFILE = "/var/lib/node_exporter/textfile_collector/waqi.prom"
-TOKEN = "ssssssssssssssssssssssssss"
+TOKEN = "sssssssssssssssssssss"
 
 STATIONS = {
     "Talbiye": "H5784",
@@ -15,7 +17,7 @@ STATIONS = {
     "Tel Aviv": "H5783"
 }
 
-def fetch_station(station_id):
+def fetch_station(station_id, custom_label):
     url = f"https://api.waqi.info/feed/@{station_id}/?token={TOKEN}"
     try:
         r = requests.get(url)
@@ -27,12 +29,20 @@ def fetch_station(station_id):
         d = data["data"]
         iaqi = d.get("iaqi", {})
         geo = d["city"].get("geo", [None, None])
-        station_name = d["city"].get("name", "unknown").replace('"', "'")
-        time_unix = d["time"].get("v")
         dominentpol = d.get("dominentpol", "unknown")
 
-        label = f'station="{station_name}"'
+        # Process timestamp correction
+        time_unix = d["time"].get("v")  # seconds since epoch in local time
+        tz_str = d["time"].get("tz", "+00:00")  # e.g., "+03:00"
+        offset_match = re.match(r"([+-])(\d{2}):(\d{2})", tz_str)
+        if offset_match:
+            sign, h, m = offset_match.groups()
+            offset_sec = (int(h) * 3600 + int(m) * 60) * (1 if sign == "+" else -1)
+        else:
+            offset_sec = 0
+        timestamp_utc_ms = (time_unix - offset_sec) * 1000
 
+        label = f'station="{custom_label}"'
         metrics = [
             ("waqi_aqi", d.get("aqi")),
             ("waqi_pm25", iaqi.get("pm25", {}).get("v")),
@@ -46,14 +56,13 @@ def fetch_station(station_id):
             ("waqi_wind", iaqi.get("w", {}).get("v")),
             ("waqi_geo_lat", geo[0]),
             ("waqi_geo_lon", geo[1]),
-            ("waqi_last_updated", time_unix),
+            ("waqi_last_updated", int(timestamp_utc_ms)),
         ]
 
         lines = [f"# WAQI scrape for station @{station_id} — Dominant pollutant: {dominentpol}"]
         for name, value in metrics:
             if value is not None:
                 lines.append(f'{name}{{{label}}} {value}')
-
         return "\n".join(lines)
 
     except Exception as e:
@@ -62,7 +71,6 @@ def fetch_station(station_id):
 
 def main():
     output_lines = [f"# Multi-station WAQI export - {datetime.utcnow().isoformat()}Z"]
-    # Write HELP/TYPE lines for each metric at the top
     metric_headers = [
         ("waqi_aqi", "Air Quality Index"),
         ("waqi_pm25", "PM2.5 µg/m³"),
@@ -76,15 +84,17 @@ def main():
         ("waqi_wind", "Wind m/s"),
         ("waqi_geo_lat", "Sensor latitude"),
         ("waqi_geo_lon", "Sensor longitude"),
-        ("waqi_last_updated", "Last reading timestamp (Unix)"),
+        ("waqi_last_updated", "Last reading timestamp (UTC, ms since epoch)"),
     ]
     for name, desc in metric_headers:
         output_lines.append(f"# HELP {name} {desc}")
         output_lines.append(f"# TYPE {name} gauge")
-    for station_id in STATIONS.values():
-        block = fetch_station(station_id)
+
+    for custom_label, station_id in STATIONS.items():
+        block = fetch_station(station_id, custom_label)
         if block:
             output_lines.append(block)
+
     with open(OUTFILE, "w") as f:
         f.write("\n\n".join(output_lines) + "\n")
 
