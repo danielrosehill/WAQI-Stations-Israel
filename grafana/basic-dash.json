@@ -88,8 +88,33 @@
         }
       ],
       "timeFrom": "15m",
-      "title": "Panel Title",
+      "title": "Last Update",
       "type": "stat"
+    },
+    {
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div style=\"font-family: sans-serif; text-align: left; padding: 10px; color: #ffeb3b;\">\n  <h1 style=\"margin-bottom: 0.3em; font-size: 1.8em;\">Jerusalem Air Quality Dashboard</h1>\n  <p style=\"font-size: 1.2em; margin: 0.2em 0;\"><strong>Reading:</strong> Latest</p>\n  <p style=\"font-size: 1.2em; margin: 0.2em 0;\"><strong>Source:</strong> Israel Ministry of Environmental Protection</p>\n</div>\n",
+        "mode": "html"
+      },
+      "pluginVersion": "11.6.0",
+      "title": "",
+      "type": "text"
     },
     {
       "gridPos": {
@@ -268,6 +293,6 @@
   "timezone": "Asia/Jerusalem",
   "title": "Air Quality Index",
   "uid": "cejslxd8o01kwc",
-  "version": 32,
+  "version": 36,
   "weekStart": "sunday"
 }
