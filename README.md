@@ -16,7 +16,7 @@ The WAQI project aggregates real-time air quality data from national EPAs, inclu
 | Station Name                 | Description / Notes                                         | Station ID |
 |-----------------------------|-------------------------------------------------------------|------------|
 | Central Bus Station         | Fixed monitor, non-portable; operated by Misrad HaSvivah    | H8655      |
-| Sanhedriya| Near Bar Ilan intersection                                | H2966      |
+| Sanhedriya | Near Bar Ilan intersection                                | H2966      |
 | Talbiye       | Labelled "Jerusalem"; geographically central                | H5784      |
 | Baka                        | Possibly mislabeled; appears in southern Jerusalem          | H2985      |
 
