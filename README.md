@@ -1,6 +1,6 @@
 # WAQI Station IDs - Israel (Manual Survey)
 
- ![alt text](images/dashboard.png)
+ ![alt text](images/dash.png)
 
 This repository documents manually collected WAQI (World Air Quality Index) station IDs for several key locations in Israel. This data is useful for setting up automated queries to WAQI's air quality API.
 
