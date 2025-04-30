@@ -4,10 +4,10 @@ import sys
 from datetime import datetime
 
 OUTFILE = "/var/lib/node_exporter/textfile_collector/waqi.prom"
-TOKEN = "7242424242424242424242424242"
+TOKEN = "7sfsfsfsfsfsfsfsfsfsf"
 
 STATIONS = {
-    "Talbiye": "H5784",
+    "Talbiye": "5784",
     "Central Bus Station": "H8655",
     "Sanhedriya": "H2966",
     "Baka": "H2985",
@@ -15,25 +15,26 @@ STATIONS = {
     "Tel Aviv": "H5783"
 }
 
-def fetch_station(station_name, station_id):
+def fetch_station(station_id):
     url = f"https://api.waqi.info/feed/@{station_id}/?token={TOKEN}"
     try:
         r = requests.get(url)
         r.raise_for_status()
         data = r.json()
         if data.get("status") != "ok":
-            raise ValueError(f"API returned error for {station_name} ({station_id})")
+            raise ValueError(f"API returned error for station {station_id}")
 
         d = data["data"]
         iaqi = d.get("iaqi", {})
         geo = d["city"].get("geo", [None, None])
+        station_name = d["city"].get("name", "unknown").replace('"', "'")
         time_unix = d["time"].get("v")
         dominentpol = d.get("dominentpol", "unknown")
 
-        label = f'station="{station_name}",id="{station_id}"'
+        label = f'station="{station_name}"'
 
         metrics = [
-            ("waqi_aqi", d["aqi"], "Air Quality Index"),
+            ("waqi_aqi", d.get("aqi"), "Air Quality Index"),
             ("waqi_pm25", iaqi.get("pm25", {}).get("v"), "PM2.5 µg/m³"),
             ("waqi_pm10", iaqi.get("pm10", {}).get("v"), "PM10 µg/m³"),
             ("waqi_co", iaqi.get("co", {}).get("v"), "Carbon Monoxide (CO) ppm"),
@@ -48,23 +49,24 @@ def fetch_station(station_name, station_id):
             ("waqi_last_updated", time_unix, "Last reading timestamp (Unix)"),
         ]
 
-        lines = [f"# WAQI scrape for {station_name} ({station_id}) — Dominant pollutant: {dominentpol}"]
+        lines = [f"# WAQI scrape for station @{station_id} — Dominant pollutant: {dominentpol}"]
         for name, value, desc in metrics:
             if value is not None:
                 lines.append(f"# HELP {name} {desc}")
                 lines.append(f"# TYPE {name} gauge")
                 lines.append(f'{name}{{{label}}} {value}')
+
         return "\n".join(lines)
 
     except Exception as e:
-        sys.stderr.write(f"Failed for {station_name} ({station_id}): {e}\n")
+        sys.stderr.write(f"Failed for station {station_id}: {e}\n")
         return None
 
 
 def main():
     output_lines = [f"# Multi-station WAQI export - {datetime.utcnow().isoformat()}Z"]
-    for name, sid in STATIONS.items():
-        block = fetch_station(name, sid)
+    for station_id in STATIONS.values():
+        block = fetch_station(station_id)
         if block:
             output_lines.append(block)
     with open(OUTFILE, "w") as f:
