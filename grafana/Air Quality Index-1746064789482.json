@@ -1,4 +1,410 @@
 {
+  "__inputs": [
+    {
+      "name": "DS_HOME_PROMETHEUS",
+      "label": "Home Prometheus",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "prometheus",
+      "pluginName": "Prometheus"
+    }
+  ],
+  "__elements": {
+    "eekizg9e8okxse": {
+      "name": "UTC Time",
+      "uid": "eekizg9e8okxse",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "description": "",
+        "options": {
+          "bgColor": "",
+          "clockType": "custom",
+          "countdownSettings": {
+            "endCountdownTime": "2025-05-01T10:34:15+03:00",
+            "endText": "00:00:00",
+            "invalidValueText": "invalid value",
+            "noValueText": "no value found",
+            "queryCalculation": "last",
+            "source": "input"
+          },
+          "countupSettings": {
+            "beginCountupTime": "2025-05-01T10:34:15+03:00",
+            "beginText": "00:00:00",
+            "invalidValueText": "invalid value",
+            "noValueText": "no value found",
+            "queryCalculation": "last",
+            "source": "input"
+          },
+          "dateSettings": {
+            "dateFormat": "YYYY-MM-DD",
+            "fontSize": "20px",
+            "fontWeight": "normal",
+            "locale": "",
+            "showDate": false
+          },
+          "descriptionSettings": {
+            "descriptionText": "",
+            "fontSize": "12px",
+            "fontWeight": "normal",
+            "noValueText": "no description found",
+            "source": "none"
+          },
+          "fontMono": false,
+          "mode": "time",
+          "refresh": "sec",
+          "timeSettings": {
+            "customFormat": "hh:mm",
+            "fontSize": "70px",
+            "fontWeight": "normal"
+          },
+          "timezone": "Etc/UTC",
+          "timezoneSettings": {
+            "fontSize": "40px",
+            "fontWeight": "normal",
+            "showTimezone": true,
+            "zoneFormat": "abbv"
+          }
+        },
+        "pluginVersion": "2.1.8",
+        "type": "grafana-clock-panel",
+        "targets": [
+          {
+            "refId": "A",
+            "datasource": {
+              "type": "datasource",
+              "uid": "grafana"
+            }
+          }
+        ]
+      }
+    },
+    "bekizfwk6yqdcd": {
+      "name": "IDT Time",
+      "uid": "bekizfwk6yqdcd",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "description": "",
+        "options": {
+          "bgColor": "",
+          "clockType": "custom",
+          "countdownSettings": {
+            "endCountdownTime": "2025-05-01T10:34:15+03:00",
+            "endText": "00:00:00",
+            "invalidValueText": "invalid value",
+            "noValueText": "no value found",
+            "queryCalculation": "last",
+            "source": "input"
+          },
+          "countupSettings": {
+            "beginCountupTime": "2025-05-01T10:34:15+03:00",
+            "beginText": "00:00:00",
+            "invalidValueText": "invalid value",
+            "noValueText": "no value found",
+            "queryCalculation": "last",
+            "source": "input"
+          },
+          "dateSettings": {
+            "dateFormat": "YYYY-MM-DD",
+            "fontSize": "20px",
+            "fontWeight": "normal",
+            "locale": "",
+            "showDate": false
+          },
+          "descriptionSettings": {
+            "descriptionText": "",
+            "fontSize": "12px",
+            "fontWeight": "normal",
+            "noValueText": "no description found",
+            "source": "none"
+          },
+          "fontMono": false,
+          "mode": "time",
+          "refresh": "sec",
+          "timeSettings": {
+            "customFormat": "hh:mm",
+            "fontSize": "70px",
+            "fontWeight": "normal"
+          },
+          "timezone": "Asia/Jerusalem",
+          "timezoneSettings": {
+            "fontSize": "40px",
+            "fontWeight": "normal",
+            "showTimezone": true,
+            "zoneFormat": "abbv"
+          }
+        },
+        "pluginVersion": "2.1.8",
+        "type": "grafana-clock-panel",
+        "targets": [
+          {
+            "refId": "A",
+            "datasource": {
+              "type": "datasource",
+              "uid": "grafana"
+            }
+          }
+        ]
+      }
+    },
+    "eeki2izwlb7k0f": {
+      "name": "Jerusalem Urban Avg PM 2.5 Stat",
+      "uid": "eeki2izwlb7k0f",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_HOME_PROMETHEUS}"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "thresholds"
+            },
+            "displayName": "PM 2.5",
+            "mappings": [],
+            "max": 150,
+            "min": 0,
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 12
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 35
+                },
+                {
+                  "color": "orange",
+                  "value": 55.4
+                },
+                {
+                  "color": "semi-dark-red",
+                  "value": 150
+                }
+              ]
+            },
+            "unit": "conμgm3"
+          },
+          "overrides": []
+        },
+        "options": {
+          "minVizHeight": 75,
+          "minVizWidth": 75,
+          "orientation": "auto",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "sizing": "auto"
+        },
+        "pluginVersion": "11.6.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "aejt0k0045c00f"
+            },
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "avg(waqi_pm25{station=~\"Central Bus Station|Sanhedriya|Baka\"})\n",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "instant": false,
+            "legendFormat": "PM2.5",
+            "range": true,
+            "refId": "A",
+            "useBackend": false
+          }
+        ],
+        "timeFrom": "15m",
+        "title": "Jerusalem Urban Avg",
+        "type": "gauge"
+      }
+    },
+    "beki33arks9ogb": {
+      "name": "Jerusalem Urban Avg Time Series",
+      "uid": "beki33arks9ogb",
+      "kind": 1,
+      "model": {
+        "datasource": {
+          "type": "prometheus",
+          "uid": "${DS_HOME_PROMETHEUS}"
+        },
+        "description": "",
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisBorderShow": false,
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "barWidthFactor": 0.6,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "insertNulls": false,
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "green",
+                  "value": 12
+                },
+                {
+                  "color": "#EAB839",
+                  "value": 35
+                },
+                {
+                  "color": "orange",
+                  "value": 55.4
+                },
+                {
+                  "color": "semi-dark-red",
+                  "value": 150
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "hideZeros": false,
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "11.6.1",
+        "targets": [
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "aejt0k0045c00f"
+            },
+            "disableTextWrap": false,
+            "editorMode": "code",
+            "expr": "avg(waqi_pm25{station=~\"Central Bus Station|Sanhedriya|Baka\"})\n",
+            "fullMetaSearch": false,
+            "includeNullMetadata": true,
+            "instant": false,
+            "legendFormat": "City Avg - PM 2.5",
+            "range": true,
+            "refId": "A",
+            "useBackend": false
+          },
+          {
+            "datasource": {
+              "type": "prometheus",
+              "uid": "aejt0k0045c00f"
+            },
+            "disableTextWrap": false,
+            "editorMode": "builder",
+            "expr": "avg(waqi_pm25{station=~\"Talbiye\"})",
+            "fullMetaSearch": false,
+            "hide": false,
+            "includeNullMetadata": true,
+            "instant": false,
+            "legendFormat": "Talbiyeh - PM 2.5",
+            "range": true,
+            "refId": "C",
+            "useBackend": false
+          }
+        ],
+        "timeFrom": "24h",
+        "title": "Jerusalem 24 Hours",
+        "type": "timeseries"
+      }
+    }
+  },
+  "__requires": [
+    {
+      "type": "panel",
+      "id": "gauge",
+      "name": "Gauge",
+      "version": ""
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "11.6.1"
+    },
+    {
+      "type": "datasource",
+      "id": "prometheus",
+      "name": "Prometheus",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "stat",
+      "name": "Stat",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    }
+  ],
   "annotations": {
     "list": [
       {
@@ -18,14 +424,10 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 47,
+  "id": null,
   "links": [],
   "panels": [
     {
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
-      },
       "gridPos": {
         "h": 8,
         "w": 7,
@@ -43,7 +445,6 @@
         "mode": "html"
       },
       "pluginVersion": "11.6.1",
-      "title": "",
       "type": "text"
     },
     {
@@ -55,11 +456,9 @@
       },
       "id": 18,
       "libraryPanel": {
-        "name": "UTC Time",
-        "uid": "eekizg9e8okxse"
-      },
-      "title": "",
-      "type": "library-panel-ref"
+        "uid": "eekizg9e8okxse",
+        "name": "UTC Time"
+      }
     },
     {
       "gridPos": {
@@ -70,16 +469,14 @@
       },
       "id": 19,
       "libraryPanel": {
-        "name": "IDT Time",
-        "uid": "bekizfwk6yqdcd"
-      },
-      "title": "",
-      "type": "library-panel-ref"
+        "uid": "bekizfwk6yqdcd",
+        "name": "IDT Time"
+      }
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -141,7 +538,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -168,11 +565,9 @@
       },
       "id": 10,
       "libraryPanel": {
-        "name": "Jerusalem Urban Avg PM 2.5 Stat",
-        "uid": "eeki2izwlb7k0f"
-      },
-      "title": "Jerusalem Urban Avg",
-      "type": "library-panel-ref"
+        "uid": "eeki2izwlb7k0f",
+        "name": "Jerusalem Urban Avg PM 2.5 Stat"
+      }
     },
     {
       "gridPos": {
@@ -183,11 +578,9 @@
       },
       "id": 14,
       "libraryPanel": {
-        "name": "Jerusalem Urban Avg Time Series",
-        "uid": "beki33arks9ogb"
-      },
-      "title": "Jerusalem 24 Hours",
-      "type": "library-panel-ref"
+        "uid": "beki33arks9ogb",
+        "name": "Jerusalem Urban Avg Time Series"
+      }
     },
     {
       "gridPos": {
@@ -198,16 +591,14 @@
       },
       "id": 9,
       "libraryPanel": {
-        "name": "Jerusalem Urban Avg Time Series",
-        "uid": "beki33arks9ogb"
-      },
-      "title": "Jerusalem 1 Hour",
-      "type": "library-panel-ref"
+        "uid": "beki33arks9ogb",
+        "name": "Jerusalem Urban Avg Time Series"
+      }
     },
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -274,7 +665,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -295,7 +686,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -362,7 +753,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -383,7 +774,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -450,7 +841,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -471,7 +862,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -538,7 +929,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -559,7 +950,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "aejt0k0045c00f"
+        "uid": "${DS_HOME_PROMETHEUS}"
       },
       "description": "",
       "fieldConfig": {
@@ -626,7 +1017,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "aejt0k0045c00f"
+            "uid": "${DS_HOME_PROMETHEUS}"
           },
           "disableTextWrap": false,
           "editorMode": "builder",
@@ -645,7 +1036,6 @@
       "type": "stat"
     }
   ],
-  "preload": false,
   "schemaVersion": 41,
   "tags": [],
   "templating": {
