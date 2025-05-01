@@ -22,84 +22,14 @@
   "links": [],
   "panels": [
     {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "aejt0k0045c00f"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green"
-              }
-            ]
-          },
-          "unit": "dateTimeAsIso"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
-      "id": 4,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "percentChangeColorMode": "standard",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showPercentChange": false,
-        "textMode": "auto",
-        "wideLayout": true
-      },
-      "pluginVersion": "11.6.0",
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "aejt0k0045c00f"
-          },
-          "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "waqi_last_updated{station=\"Talbiye\"}",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
-          "instant": false,
-          "legendFormat": "__auto",
-          "range": true,
-          "refId": "A",
-          "useBackend": false
-        }
-      ],
-      "timeFrom": "15m",
-      "title": "Last Update",
-      "type": "stat"
-    },
-    {
       "fieldConfig": {
         "defaults": {},
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
-        "w": 12,
-        "x": 12,
+        "h": 8,
+        "w": 7,
+        "x": 0,
         "y": 0
       },
       "id": 5,
@@ -109,26 +39,41 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "<div style=\"font-family: sans-serif; text-align: left; padding: 10px; color: #ffeb3b;\">\n  <h1 style=\"margin-bottom: 0.3em; font-size: 1.8em;\">Jerusalem Air Quality Dashboard</h1>\n  <p style=\"font-size: 1.2em; margin: 0.2em 0;\"><strong>Reading:</strong> Latest</p>\n  <p style=\"font-size: 1.2em; margin: 0.2em 0;\"><strong>Source:</strong> Israel Ministry of Environmental Protection</p>\n</div>\n",
+        "content": "<div style=\"font-family: sans-serif; text-align: left; padding: 10px; color: #ffeb3b; font-size: 1.5em;\">\n  <h1 style=\"margin-bottom: 0.3em; font-size: 2.4em;\">Jerusalem Air Quality Dashboard</h1>\n  <p style=\"margin: 0.4em 0;\"><strong>Reading:</strong> Latest</p>\n  <p style=\"margin: 0.4em 0;\"><strong>Source:</strong> Israel Ministry of Environmental Protection</p>\n</div>\n",
         "mode": "html"
       },
-      "pluginVersion": "11.6.0",
+      "pluginVersion": "11.6.1",
       "title": "",
       "type": "text"
     },
     {
       "gridPos": {
         "h": 8,
-        "w": 4,
-        "x": 0,
-        "y": 5
+        "w": 3,
+        "x": 7,
+        "y": 0
       },
-      "id": 1,
+      "id": 18,
       "libraryPanel": {
-        "name": "Live PM 2.5 Talbiye",
-        "uid": "bekhxmg5loj5se"
+        "name": "UTC Time",
+        "uid": "eekizg9e8okxse"
       },
-      "title": "Talbiye",
+      "title": "",
+      "type": "library-panel-ref"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 3,
+        "x": 10,
+        "y": 0
+      },
+      "id": 19,
+      "libraryPanel": {
+        "name": "IDT Time",
+        "uid": "bekizfwk6yqdcd"
+      },
+      "title": "",
       "type": "library-panel-ref"
     },
     {
@@ -140,41 +85,137 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "mode": "thresholds"
           },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "barWidthFactor": 0.6,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
+          "displayName": "AQI",
+          "mappings": [],
+          "max": 500,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "green",
+                "value": 12
+              },
+              {
+                "color": "yellow",
+                "value": 51
+              },
+              {
+                "color": "red",
+                "value": 101
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 13,
+        "y": 0
+      },
+      "id": 11,
+      "options": {
+        "minVizHeight": 75,
+        "minVizWidth": 75,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "sizing": "auto"
+      },
+      "pluginVersion": "11.6.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aejt0k0045c00f"
           },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "avg(waqi_aqi{station=~\"Central Bus Station|Sanhedriya|Baka\"})",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "PM2.5",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "15m",
+      "title": "Jerusalem Urban Avg",
+      "type": "gauge"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 4,
+        "x": 17,
+        "y": 0
+      },
+      "id": 10,
+      "libraryPanel": {
+        "name": "Jerusalem Urban Avg PM 2.5 Stat",
+        "uid": "eeki2izwlb7k0f"
+      },
+      "title": "Jerusalem Urban Avg",
+      "type": "library-panel-ref"
+    },
+    {
+      "gridPos": {
+        "h": 15,
+        "w": 10,
+        "x": 0,
+        "y": 8
+      },
+      "id": 14,
+      "libraryPanel": {
+        "name": "Jerusalem Urban Avg Time Series",
+        "uid": "beki33arks9ogb"
+      },
+      "title": "Jerusalem 24 Hours",
+      "type": "library-panel-ref"
+    },
+    {
+      "gridPos": {
+        "h": 15,
+        "w": 11,
+        "x": 10,
+        "y": 8
+      },
+      "id": 9,
+      "libraryPanel": {
+        "name": "Jerusalem Urban Avg Time Series",
+        "uid": "beki33arks9ogb"
+      },
+      "title": "Jerusalem 1 Hour",
+      "type": "library-panel-ref"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aejt0k0045c00f"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "PM2.5",
           "mappings": [],
           "thresholds": {
             "mode": "absolute",
@@ -199,31 +240,36 @@
                 "value": 150
               }
             ]
-          }
+          },
+          "unit": "conμgm3"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 16,
-        "w": 20,
-        "x": 4,
-        "y": 5
+        "h": 5,
+        "w": 3,
+        "x": 0,
+        "y": 23
       },
-      "id": 2,
+      "id": 8,
       "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
         },
-        "tooltip": {
-          "hideZeros": false,
-          "mode": "single",
-          "sort": "none"
-        }
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "pluginVersion": "11.6.0",
+      "pluginVersion": "11.6.1",
       "targets": [
         {
           "datasource": {
@@ -232,15 +278,87 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "waqi_pm25{station=\"Talbiye\"}",
+          "expr": "waqi_pm25{station=\"Sanhedriya\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "PM2.5",
+          "legendFormat": "__auto",
           "range": true,
           "refId": "A",
           "useBackend": false
+        }
+      ],
+      "timeFrom": "15m",
+      "title": "Sanhedriya",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aejt0k0045c00f"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "PM2.5",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "green",
+                "value": 12
+              },
+              {
+                "color": "#EAB839",
+                "value": 35
+              },
+              {
+                "color": "orange",
+                "value": 55.4
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 150
+              }
+            ]
+          },
+          "unit": "conμgm3"
         },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 3,
+        "y": 23
+      },
+      "id": 16,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.1",
+      "targets": [
         {
           "datasource": {
             "type": "prometheus",
@@ -248,35 +366,283 @@
           },
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "waqi_aqi{station=\"Talbiye\"}",
+          "expr": "waqi_pm25{station=\"Kfar Etzion\"}",
           "fullMetaSearch": false,
-          "hide": false,
           "includeNullMetadata": true,
           "instant": false,
-          "legendFormat": "AQI",
+          "legendFormat": "__auto",
           "range": true,
-          "refId": "B",
+          "refId": "A",
           "useBackend": false
         }
       ],
-      "timeFrom": "6h",
-      "title": "Talbiye",
-      "type": "timeseries"
+      "timeFrom": "15m",
+      "title": "Kfar Etsion",
+      "type": "stat"
     },
     {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aejt0k0045c00f"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "PM2.5",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "green",
+                "value": 12
+              },
+              {
+                "color": "#EAB839",
+                "value": 35
+              },
+              {
+                "color": "orange",
+                "value": 55.4
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 150
+              }
+            ]
+          },
+          "unit": "conμgm3"
+        },
+        "overrides": []
+      },
       "gridPos": {
-        "h": 8,
+        "h": 5,
         "w": 4,
-        "x": 0,
-        "y": 13
+        "x": 7,
+        "y": 23
       },
-      "id": 3,
-      "libraryPanel": {
-        "name": "Talbiye AQI",
-        "uid": "dekhxu5g2wdtsd"
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
       },
-      "title": "Talbiye",
-      "type": "library-panel-ref"
+      "pluginVersion": "11.6.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aejt0k0045c00f"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "waqi_pm25{station=\"Central Bus Station\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "15m",
+      "title": "CBS",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aejt0k0045c00f"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "PM2.5",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "green",
+                "value": 12
+              },
+              {
+                "color": "#EAB839",
+                "value": 35
+              },
+              {
+                "color": "orange",
+                "value": 55.4
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 150
+              }
+            ]
+          },
+          "unit": "conμgm3"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 11,
+        "y": 23
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aejt0k0045c00f"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "waqi_pm25{station=\"Baka\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "15m",
+      "title": "Baka",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "aejt0k0045c00f"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "displayName": "PM2.5",
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green"
+              },
+              {
+                "color": "green",
+                "value": 12
+              },
+              {
+                "color": "#EAB839",
+                "value": 35
+              },
+              {
+                "color": "orange",
+                "value": 55.4
+              },
+              {
+                "color": "semi-dark-red",
+                "value": 150
+              }
+            ]
+          },
+          "unit": "conμgm3"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 4,
+        "x": 15,
+        "y": 23
+      },
+      "id": 15,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "percentChangeColorMode": "standard",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "11.6.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "aejt0k0045c00f"
+          },
+          "disableTextWrap": false,
+          "editorMode": "builder",
+          "expr": "waqi_pm25{station=\"Tel Aviv\"}",
+          "fullMetaSearch": false,
+          "includeNullMetadata": true,
+          "instant": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A",
+          "useBackend": false
+        }
+      ],
+      "timeFrom": "15m",
+      "title": "Tel Aviv Center",
+      "type": "stat"
     }
   ],
   "preload": false,
@@ -286,13 +652,13 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "Asia/Jerusalem",
   "title": "Air Quality Index",
   "uid": "cejslxd8o01kwc",
-  "version": 36,
+  "version": 77,
   "weekStart": "sunday"
 }
